@@ -12,5 +12,23 @@ class Speech(models.Model):
     def __str__(self):
         return self.title
     
+class Speaker(models.Model):
+    firstname = models.CharField(max_length = 40)
+    lastname = models.CharField(max_length = 40)
+    info = models.TextField('Speech')
+    
+    def get_absoulte_url(self):
+        return reverse('speaker_detail', args = [str(self.id)])
+    
+    def __str__(self):
+        return self.firstname
+    
+    def __str__(self):
+        return self.lastname
+   
+    
+    
+    
+    
     
     
